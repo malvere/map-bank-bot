@@ -25,7 +25,7 @@ async def start(msg: types.Message):
     if (status != 'left'):
         await msg.answer('Выберите карту: ', reply_markup=kb.cardsKeyboard)
     else:
-        pass
+        await msg.answer('Error')
 
 @dp.message_handler(commands=['code'])
 async def code(msg: types.Message):
@@ -34,7 +34,7 @@ async def code(msg: types.Message):
     if (status != 'left'):
         await msg.answer('Проверить есть ли код?', reply_markup=kb.codeKeyboard)
     else:
-        pass
+        await msg.answer('Error')
 
 @dp.callback_query_handler(lambda c: c.data and c.data.startswith('*'))
 async def processCards(call: types.CallbackQuery):
