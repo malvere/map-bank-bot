@@ -22,10 +22,10 @@ dp.middleware.setup(LoggingMiddleware())
 async def start(msg: types.Message):
     status = await bot.get_chat_member(-1001631976127, msg.from_user.id)
     print(status)
-    if (status != 'left'):
+    if (status.status != 'left'):
         await msg.answer('Выберите карту: ', reply_markup=kb.cardsKeyboard)
     else:
-        await msg.answer('Error')
+        Pass
 
 @dp.message_handler(commands=['code'])
 async def code(msg: types.Message):
