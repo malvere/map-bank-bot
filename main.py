@@ -31,7 +31,7 @@ async def start(msg: types.Message):
 async def code(msg: types.Message):
     status = await bot.get_chat_member(-1001631976127, msg.from_user.id)
     print(status)
-    if (status != 'left'):
+    if (status.status != 'left'):
         await msg.answer('Проверить есть ли код?', reply_markup=kb.codeKeyboard)
     else:
         await msg.answer('Error')
