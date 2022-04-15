@@ -25,7 +25,7 @@ async def start(msg: types.Message):
     if (status.status != 'left'):
         await msg.answer('Выберите карту: ', reply_markup=kb.cardsKeyboard)
     else:
-        Pass
+        pass
 
 @dp.message_handler(commands=['code'])
 async def code(msg: types.Message):
